@@ -1,0 +1,26 @@
+
+#horizontal .contents{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+#horizontal {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.casestudy-lrg {
+    width: 1800px;
+    height: 1100px;
+    background-color: lawngreen;
+}
+
+
+.casestudy-lrg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
