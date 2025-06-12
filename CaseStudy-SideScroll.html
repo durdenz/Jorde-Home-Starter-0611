@@ -144,8 +144,8 @@
 
 
 <section id="horizontal">
-
-    <div class="row contents" style="padding-top: 5px; padding-bottom: 15rem; width: 60vw;">
+<!-- 061125 G4 Modified to 100vw so snapTo can calculate spacing  -->
+    <div class="row contents" style="padding-top: 5px; padding-bottom: 15rem; width: 100vw;">
             <div class="col-9">
                 <h1 class="csdate" style="color: black;">Case Study 2024</h1>
                 <h1 class="cs-title">Mountain Dew X Diet Pepsi Collab 2024</h1>
@@ -288,13 +288,15 @@
 
     // Listen for the scroll event and log the event data
     lenis.on('scroll', (e) => {
-    console.log(e);
+    // console.log(e);
     });
 </script>
 
 <!-- Include custom JS for this app -->
 <script src="./js/main.js" type="module"></script>
-<script src="./CaseStudy-SideScroll.js" type="module"></script>
+
+<!-- 061125 G4 Temp Change to Modified js file -->
+<script src="./CaseStudy-SideScroll-2.js" type="module"></script>
 
 
 </body>
