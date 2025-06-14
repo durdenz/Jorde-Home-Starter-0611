@@ -24,7 +24,7 @@ function makeOffsetsArray(elementsArray) {
         offset = ((xPos + xWidth)/totalWidth);
         OffsetsArray.push(offset);
     });
-    OffsetsArray.pop();
+    OffsetsArray.pop(); // Remove endpoint of last element from the array
     return;
 }
 
