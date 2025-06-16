@@ -291,21 +291,44 @@ const LottieButton1 = new DotLottie({
 let btn1pause = 24; // Pause Frame in animation
 let btn1end = 60;  // Last Frame in animation
 
+// G4 061625 - Start Changes to address hamburger animation
+//
+// 1 - Removed mouseenter functionality
+// 2 - Added Btn1ClickState to track button status
+// 3 - Added Logic to click handler to animate the hamburger forward or reverse
+// 4 - Removed mouseleave functionality
+
 function Btn1Hover() {
-    LottieButton1.setSegment(1, btn1pause);
-    LottieButton1.play();
+    // LottieButton1.setSegment(1, btn1pause);
+    // LottieButton1.play();
 }
 
+let Btn1ClickState = 0;
+
 function Btn1Click() {
-    LottieButton1.setSegment(btn1pause, btn1end);
-    LottieButton1.play();
+    // LottieButton1.setSegment(btn1pause, btn1end);
+      if (Btn1ClickState == 0) {
+        LottieButton1.setMode("forward");
+        LottieButton1.setSegment(1, btn1pause);
+        LottieButton1.play();
+        Btn1ClickState = 1;
+        console.log("Menu Opened - Btn1ClickState = "+Btn1ClickState);
+    } else {
+        LottieButton1.setMode("reverse");
+        LottieButton1.setSegment(1, btn1pause);
+        LottieButton1.play();
+        Btn1ClickState = 0;
+        console.log("Menu Closed - Btn1ClickState = "+Btn1ClickState);
+      }
 }
 
 function Btn1Exit() {
-  LottieButton1.playSegments(1, 24);
-  LottieButton1.setDirection(-1);
-  LottieButton1.play();
+  // LottieButton1.playSegments(1, 24);
+  // LottieButton1.setDirection(-1);
+  // LottieButton1.play();
 }
+
+// G4 061625 End of Changes
 
 btn1canvas.addEventListener("mouseenter", Btn1Hover);
 btn1canvas.addEventListener("click", Btn1Click);
