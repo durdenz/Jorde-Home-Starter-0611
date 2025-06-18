@@ -220,11 +220,23 @@ async function setupScene() {
 
 	let positionAlongPathState = new PositionAlongPathState();
 
+ 	// ========================================
+	// 061825 G4 Start of Changes
+  // Changed onMouseScroll to isolate scroll thru scene to when top of canvas reaches top of viewport
+
+	// Setup Event Listener for Scrolling inside canvas
+	let SplineCanvas = document.querySelector('#spline-path-canvas');
+	
 	window.addEventListener('wheel', onMouseScroll, false);
 
 	function onMouseScroll(event){
-		handleScroll(event, positionAlongPathState);
+    if(SplineCanvas.getBoundingClientRect().top <= 0) {
+      console.log(`MouseScroll: SplineCanvas.top = ${SplineCanvas.getBoundingClientRect().top}`);
+		  handleScroll(event, positionAlongPathState);
+    }
 	}
+	// 061825 G4 End of Changes
+	// ========================================
 
 	// Animate the scene
 	function animate() {
